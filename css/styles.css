@@ -1,0 +1,95 @@
+/* Smart Invoice Generator - Custom Styles */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #64748b; }
+.glass { background: rgba(255,255,255,0.7); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.2); }
+.dark .glass { background: rgba(30,41,59,0.7); border-color: rgba(255,255,255,0.05); }
+.card-hover { transition: all 0.3s cubic-bezier(0.4,0,0.2,1); }
+.card-hover:hover { transform: translateY(-2px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+.dark .card-hover:hover { box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+@keyframes fadeIn { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
+.fade-in { animation: fadeIn 0.4s ease-out; }
+@keyframes slideIn { from { opacity:0; transform:translateX(-20px); } to { opacity:1; transform:translateX(0); } }
+.slide-in { animation: slideIn 0.3s ease-out; }
+@keyframes scaleIn { from { opacity:0; transform:scale(0.95); } to { opacity:1; transform:scale(1); } }
+.scale-in { animation: scaleIn 0.3s ease-out; }
+.btn-press { transition: all 0.15s ease; }
+.btn-press:active { transform: scale(0.97); }
+.gradient-text { background: linear-gradient(135deg, #6366f1, #8b5cf6, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.invoice-paper { background: white; box-shadow: 0 4px 24px rgba(0,0,0,0.08); border-radius: 8px; }
+@media print { body * { visibility: hidden; } #invoice-preview, #invoice-preview * { visibility: visible; } #invoice-preview { position: absolute; left:0; top:0; width:100%; } }
+.input-focus { transition: all 0.2s; }
+.input-focus:focus { outline: none; box-shadow: 0 0 0 3px rgba(99,102,241,0.15); border-color: #6366f1; }
+.modal-backdrop { background: rgba(0,0,0,0.5); backdrop-filter: blur(4px); }
+.logo-upload { border: 2px dashed #cbd5e1; transition: all 0.2s; }
+.logo-upload:hover { border-color: #6366f1; background: rgba(99,102,241,0.05); }
+.dark .logo-upload { border-color: #475569; }
+.dark .logo-upload:hover { border-color: #818cf8; background: rgba(99,102,241,0.1); }
+
+/* Auth Page Styles */
+.auth-page {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  position: relative;
+  overflow: hidden;
+}
+.auth-backdrop {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 50%, rgba(99,102,241,0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(168,85,247,0.25) 0%, transparent 50%),
+    radial-gradient(circle at 50% 80%, rgba(236,72,153,0.2) 0%, transparent 50%);
+  animation: authBackdropPulse 8s ease-in-out infinite alternate;
+}
+@keyframes authBackdropPulse {
+  0% { opacity: 0.7; transform: scale(1); }
+  100% { opacity: 1; transform: scale(1.05); }
+}
+.auth-card {
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.15), 0 0 0 1px rgba(255,255,255,0.1) inset;
+}
+.dark .auth-card {
+  background: rgba(30,41,59,0.9);
+  border-color: rgba(255,255,255,0.08);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+}
+.auth-input {
+  background: rgba(248,250,252,1);
+  border: 1.5px solid #e2e8f0;
+  transition: all 0.2s ease;
+}
+.auth-input:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 4px rgba(99,102,241,0.1);
+  background: white;
+}
+.dark .auth-input {
+  background: rgba(30,41,59,0.6);
+  border-color: #334155;
+  color: #e2e8f0;
+}
+.dark .auth-input:focus {
+  border-color: #818cf8;
+  box-shadow: 0 0 0 4px rgba(129,140,248,0.1);
+  background: rgba(30,41,59,0.8);
+}
+.auth-submit-btn {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6, #a855f7);
+  box-shadow: 0 4px 15px rgba(99,102,241,0.35);
+}
+.auth-submit-btn:hover:not(:disabled) {
+  box-shadow: 0 6px 25px rgba(99,102,241,0.5);
+  transform: translateY(-1px);
+}
+.auth-submit-btn:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(99,102,241,0.3);
+}
